@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import './App.css';
+
+// App Component
+import Header from './component/Header';
+import Search from './component/Search';
+import Nav from './component/Nav';
+import Falcons from './component/Falcons';
+import Snakes from './component/Snakes';
+import Lions from './component/Lions';
+import NotFound from './component/NotFound';
+
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <BrowserRouter>
+      <div className="container">
+      <Header />
+      <Nav />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/Falcons" render={ () => <Falcons title='Falcons' />} />
+        <Route path="/Snakes" render={ () => <Snakes title='Snakes' />} />
+        <Route path="/Lions" render={  () => <Lions title='Lions' />} />
+        <Route component={NotFound} />
+        </Switch>
       </div>
+      </BrowserRouter>
     );
   }
 }
