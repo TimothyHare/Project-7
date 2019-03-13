@@ -43,6 +43,7 @@ performSearch = search => {
     })
 }
 
+//johnny helped me with having a default photo show up it should be Falcons
   render() {
     return (
       <BrowserRouter>

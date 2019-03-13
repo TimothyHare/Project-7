@@ -29,3 +29,5 @@ const photoContainer = (props) => {
 }
 
 export default photoContainer;
+
+//johnny walked me through this
