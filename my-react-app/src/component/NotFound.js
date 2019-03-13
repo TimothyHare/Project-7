@@ -1,6 +1,11 @@
 import React from "react";
-import { WithRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const NotFound = props => (
-    
-)
+    <div className ="container">
+    <h1 className = "not-found">Page Not Found</h1>
+    <button className ="home-btn" onClick = {() => props.history.push("/")}>Take Me Home</button>
+    </div>
+);
+
+export default withRouter(NotFound);
