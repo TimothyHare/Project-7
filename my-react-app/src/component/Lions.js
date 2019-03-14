@@ -18,7 +18,7 @@ export default class Animal extends React.Component {
     componentDidMount = () => {
         axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${api}&tags=${this.props.searchFor}&per_page=24&format=json&nojsoncallback=1`)
         .then(res => {
-            this.setState({ photo: res.data.photos.photo})
+            this.setState({ photos: res.data.photos.photo})
         })
         // catch error function was copied from previouscatch error function
         .catch(function(error){
