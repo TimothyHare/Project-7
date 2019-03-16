@@ -49,7 +49,7 @@ performSearch = search => {
       <BrowserRouter>
       <div className="container">
       <Header />
-      <Search saerchPhoto = {this.performSearch}/>
+      <Search searchPhoto = {this.performSearch}/>
       <Nav />
       <Switch>
             <Route path="/search/:name" render={() => <PhotoContainer loading={this.state.loading} gallery={this.state.photos} />} />
